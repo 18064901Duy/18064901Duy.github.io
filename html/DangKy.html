@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Đăng Ký Là Thành Viên</title>
+  <meta charset="utf-8">
+  <meta name ="author" content ="Trần Văn Duy">
+  <meta name ="description" content ="Website bán hàng trực tuyến">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <style>
+  .fakeimg {
+      height: 200px;
+      background: #aaa;
+  }
+  li {
+	margin-right:30px;
+  }
+    #tt li a:hover
+  {
+  background-color:#FFFFCC;
+  }
+  </style>
+  <script language="Javascript">
+  function Check_HoTen()
+  {
+  var check = /^\s*[A-Za-z]+(\s[A-Za-z]+)*(\s[A-Za-z]+)*(\s[A-Za-z]+)*$/;
+  var n = document.getElementById("HoTen").value;
+  if(check.test(n))  {
+  document.getElementById("error_hoten").innerHTML="";
+  return true;
+  }
+  else {
+  document.getElementById("error_hoten").innerHTML="Không được chưa ký tự đặc biệt hoặc số";
+  return false;
+  }
+  }
+  
+  function Check_Email()
+  {
+  var check = /^\w+([-\.]?\w+)*@\w+([-\.]?\w+)*\.\w{2,3}(\.\w{1,3})*$/;
+  var n = document.getElementById("Email").value;
+  if(check.test(n)) {
+  document.getElementById("error_emaiil").innerHTML="";
+  return true;
+  }
+  else {
+  document.getElementById("error_emaiil").innerHTML="Email không hợp lệ.";
+  return false;
+  }
+  }
+   function Check_Pass()
+  {
+  var check = /^\s*\w{6,}$/;
+  var n = document.getElementById("ps").value;
+  if(check.test(n)) {
+  document.getElementById("error_ps").innerHTML="";
+  return true;
+  }
+  else {
+  document.getElementById("error_ps").innerHTML="Password không hợp lệ";
+  return false;
+  }
+  }
+  function Check_reps()
+  {
+  var m = document.getElementById("ps").value;
+  var n = document.getElementById("reps").value;
+  if(m==n) {
+  document.getElementById("error_reps").innerHTML="";
+  return true;
+  }
+  else {
+  document.getElementById("error_reps").innerHTML="Không khớp với mật khẩu.";
+  return false;
+  }
+  }
+  function Check_sdt()
+  {
+  var check = /^[0-9]{10,11}$/;
+  var n = document.getElementById("sdt").value;
+  if(check.test(n)) {
+  document.getElementById("error_sdt").innerHTML="";
+  return true;
+  }
+  else {
+  document.getElementById("error_sdt").innerHTML="SDT không hợp lệ";
+  return false;
+  }
+  }
+    function Check_DK()
+  {
+  if(Check_HoTen() == false || Check_Email() == false || Check_Pass() == false || Check_reps() == false || Check_sdt() == false)
+	alert("Đăng Ký Thất Bại");
+	else
+	alert("Đăng Ký Thành Công");
+  }
+  </script>
+</head>
+<body>
+<!--BANNER-->
+<div class="jumbotron text-center" style="margin-bottom:0px;">
+  <img src ="../images/banner.jpg" style ="margin-top:-60px; margin-bottom:-50px;">
+  <img src="../images/banner1.jpg" style="margin-top:-60px; margin-bottom:-50px;">
+  <img src="../images/banner2.jpg" style="margin-top:-60px; margin-bottom:-50px;">
+</div>
+<!--MENU-->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="../Index.html">Trang Chủ</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>	
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="GioiThieu.html">Giới Thiệu</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="DanhSachSanPham.html">Danh Sách Sản Phẩm</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="DanhSachSanPhamGGia.html">Sản Phẩm Đang Được Giảm Giá</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="HoTro.html">Hỗ Trợ</a>
+      </li>  	  
+    </ul>
+	<form class="form-inline" action="#" style ="margin-left:20%;">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-white" type="submit">Search</button>
+  </form>
+  </div>  
+</nav>
+<!--DANG NHAP-->
+<div class="container" style="margin-top:30px">
+  <div class="row">
+    <div class="col-sm-4">
+		<div style="margin-top:50px;">
+		<h3>Tin Tức Mới</h3>
+		<ul class="nav nav-pills flex-column" id ="tt">
+      <li class="nav-item">
+        <a class="nav-link" href="#"  style="color:#770000;">Điểm tên top 5 camera hành trình tốt nhất hiện nay</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color:#770000;">Lý do bạn nên dùng camera hành trình Gopro Hero </a>
+      </li>
+  </ul>
+      <hr class="d-sm-none">
+	  </div>
+	 
+    </div>
+	<!--carousel-->
+    <div class="col-sm-8">
+	<form name ="frm1" style="border-left-style:outset; padding-left:50px; margin-top:30px;">
+	<legend><h2 style="margin-bottom:50px;">Đăng Ký</h2></legend>
+	<input type ="text" id ="HoTen" required="true" placeholder ="Nhập Họ Và Tên" onblur ="Check_HoTen();" style ="width:50%; margin-bottom:20px; border-radius:5px 5px 5px 5px;">
+	<span id ="error_hoten" style="color:red;">*</span>
+	<br />
+	
+	<input type ="email" id ="Email" required="true" placeholder ="Nhập Email" onblur ="Check_Email();" style ="width:50%;margin-bottom:20px;border-radius:5px 5px 5px 5px;">
+	<span id ="error_emaiil" style="color:red;">*</span>
+	<br />
+
+	<input type ="password" id ="ps" required="true" placeholder ="Nhập Mật Khẩu ít nhất 6 ký tự" onblur ="Check_Pass();" style ="width:50%;margin-bottom:20px;border-radius:5px 5px 5px 5px;">
+	<span id ="error_ps" style="color:red;">*</span>
+	<br />
+	
+	<input type ="password" id ="reps" required="true" placeholder ="Nhập Lại Mật Khẩu" onblur ="Check_reps();" style ="width:50%;margin-bottom:20px;border-radius:5px 5px 5px 5px;">
+	<span id ="error_reps" style="color:red;">*</span>
+	<br />
+	
+	<input type ="telephone" id ="sdt" required="true" placeholder="Số Điện Thoại 10-11 số" onblur ="Check_sdt();" style ="width:50%;margin-bottom:20px;border-radius:5px 5px 5px 5px;">
+	<span id ="error_sdt" style="color:red;">*</span>
+	<br/>
+	
+	<p>Giới Tính: <input type = "radio" name="GT" > Nam
+				<input type ="radio" name ="GT"> Nữ</p>
+	
+	Ngày Sinh<br /> <input type ="date" style ="width:50%;margin-bottom:20px;border-radius:5px 5px 5px 5px;">
+	<br />
+	
+	<input type ="text" placeholder="Tỉnh/Thành Phố" style ="width:50%;margin-bottom:20px;border-radius:5px 5px 5px 5px;">
+	<br />
+	
+	
+	<input type "text" placeholder="Địa Chỉ" style ="width:50%;margin-bottom:20px;border-radius:5px 5px 5px 5px;">
+	<br />
+	<button type="button" id ="DangKy" onclick ="Check_DK();" class="btn btn-info" style="margin-right:20px;">Đăng Ký</button>
+	<button type="reset" class="btn btn-info">Hủy</button>
+	</form>
+    </div>
+  </div>
+</div>
+<div class="jumbotron text-center" style="margin-bottom:0px; margin-top:200px; height:0px;">
+Thực Hiện Bởi: Trần Văn Duy <br />
+		 MSSV: 18064901
+</div>
+
+</body>
+</html>
